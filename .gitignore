@@ -1,1 +1,5 @@
 node_modules
+# ignorando videos gerados pelo cypress
+cypress/videos/
+# ignorando screenshots geradas pelo cypress
+cypress/screenshots/
