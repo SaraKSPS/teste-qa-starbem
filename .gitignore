@@ -3,3 +3,5 @@ node_modules
 cypress/videos/
 # ignorando screenshots geradas pelo cypress
 cypress/screenshots/
+# ignorando relatórios gerados pelo cypress
+cypress/reports/

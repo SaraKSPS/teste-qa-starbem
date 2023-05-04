@@ -37,6 +37,14 @@ class LoginPage {
 
 
     /**
+     * Verificar se a página aberta é a de login
+     */
+    verifyLoginUrl() {
+        cy.url()
+            .should('be.equal', 'https://bugbank.netlify.app/')
+    }
+
+    /**
      * Realiza login no portal do bugbank
      * @param {string} email - Email usado para login
      * @param {string} password - Senha usada para login

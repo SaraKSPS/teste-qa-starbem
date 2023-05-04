@@ -12,31 +12,44 @@ const elements = {
 
 class ExtractPage {
 
+    /**
+     * Abre a página de extrato
+     */
+    openPage() {
+        cy.visit('https://bugbank.netlify.app/bank-statement');
+    };
+
+
+    /**
+     * Verifica resultado da transação enviada
+     * @param {string} balance - saldo esperado do usuário
+     * @param {string} description - descrição esperada
+     * @param {string} valueSent - valor enviado esperado
+     */
     verifyTransactionSent(balance, description, valueSent) {
         cy.get(elements.textBalance).invoke('text').should('contain', balance);
         cy.get(elements.textTypeTransaction).invoke('text').should('contain', 'Transferência enviada');
         cy.get(elements.textDescription).invoke('text').should('contain', description);
         cy.get(elements.textTransferValue).invoke('text').should('contain', valueSent);
+        // valor negativo
         cy.get(elements.textTransferValue).invoke('text').should('contain', '-');
         cy.get(elements.btnBack).click();
 
     };
+    /**
+     * Verifica resultado da transação recebida
+     * @param {string} valueReceived - valor recebido esperado
+     */
     verifyTransactionReceived(valueReceived) {
         cy.get(elements.textTransferValueSent).invoke('text').should('contain', 'Transferência recebida');
         cy.get(elements.textTransferValueReceived).eq(1).invoke('text').should('contain', valueReceived);
         cy.get(elements.btnBack).click();
 
     };
-    verifyTransactionSentWithoutDescrition(balance, description, valueSent) {
-        cy.get(elements.textBalance).invoke('text').should('contain', balance);
-        cy.get(elements.textTypeTransaction).invoke('text').should('contain', 'Transferência enviada');
-        cy.get(elements.textDescription).invoke('text').eq(1).should('contain', description);
-        cy.get(elements.textTransferValue).invoke('text').should('contain', valueSent);
-        cy.get(elements.textTransferValue).invoke('text').should('contain', '-');
-        cy.get(elements.btnBack).click();
 
-
-    };
+    /**
+     * Verifica descrição vazia
+     */
     verifyEmptyDescription() {
         cy.get(elements.textDescription).invoke('text')
             .then(
@@ -47,6 +60,10 @@ class ExtractPage {
                 });
 
     };
+
+    /**
+     * Clica em logout
+     */
     clickLogout() {
         cy.get(elements.btnLogout).click();
     };
