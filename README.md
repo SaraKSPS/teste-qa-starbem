@@ -16,6 +16,7 @@
     - [Executar testes pela tela do Cypress](#executar-testes-pela-tela-do-cypress)
     - [Status dos Testes](#status-dos-testes)
     - [Bugs](#bugs)
+    - [CI - Github Action](#ci---github-action)
 
 
 
@@ -108,7 +109,7 @@ Para executar utilizando a tela do Cypress, siga os passos a seguir:
 - **Tentar transferir sem informar uma conta**: Não deveria ser possível transferir sem informar a conta
 - **Verificar mensagem de erro ao tentar inserir texto no lugar do valor**: Aparece uma mensagem de erro de programação, e não uma mensagem amigável para o usuário
 
-Optei por não falhar testes com erros de gramática. No entando, os problemas serão listados nos Bugs.
+> Optei por não falhar testes com erros de gramática. No entando, os problemas serão listados nos Bugs.
 
 
 ### Bugs
@@ -116,3 +117,11 @@ Optei por não falhar testes com erros de gramática. No entando, os problemas s
 Também criei um relatório com os bugs encontrados, evidências e passo a passo para reproduzir:
 
 [Lista de Bugs](https://docs.google.com/spreadsheets/d/1ozM4xwn_1Wx6JRQu6H-FmG5gHbLg3qhMh_TCr0LvJVw/edit?usp=sharing)
+
+
+
+### CI - Github Action
+
+Foi adicionada uma rotina para realizar os testes diariamente ou após cada commit.
+
+É possível conferir esta rotina no [Github Actions](https://github.com/SaraKSPS/teste-qa-starbem/actions/)
