@@ -33,12 +33,15 @@ Foram criados casos de testes para o fluxo de agendamento de consultas. Os casos
 
 [Casos de Testes para o Fluxo de Agendamento de Consultas](https://docs.google.com/spreadsheets/d/1tbjqQVsarn7G17MIcaKbVjGuUGA01K3c8vNlN9orxYQ)
 
+
 ### Observações
 - Não foram feitos testes para o cenário de enviar anexos porque o fluxo de envio de anexos (ou exames) não está adicionado na pasta [flow](https://github.com/StarBem/qa-technical-test/blob/main/flow/);
 - Não foram feitos testes para o cenário de "Alterar número", conforme a tela de "Confirmação de Agendamento", porque não existem telas adicionadas sobre o fluxo de trocar o número de WhatsApp;
-- Estou assumindo que a tela de Tutorial sempre aparecerá após o usuário clicar em "Agendar Consulta" na tela inicial;
+- Está sendo assumido que a tela de Tutorial sempre aparecerá após o usuário clicar em "Agendar Consulta" na tela inicial;
 - Poderiam ser adicionados casos de testes sobre o limite do tamanho do texto de descrição na tela de "Motivo da Consulta" se tivesse alguma informação sobre o tamanho máximo do texto no campo;
-- Poderiam ser adicionados casos de testes para verificar se os textos nos fluxos estão conforme a especificação de Produto;
+- Poderiam ser adicionados casos de testes para verificar se todos os textos e botões nos fluxos estão conforme a especificação de Produto;
+- Está sendo assumido que aparecerá uma mensagem de erro informando o usuário que não é possível adicionar uma terceira consulta no mês ou uma segunda consulta na semana;
+- Está sendo assumido que a tela inicial com o botão "Agendar Consulta" aparecerá ao clicar em "Cancelar" em qualquer tela.
 
 ## Segundo Teste
 
@@ -125,3 +128,5 @@ Também criei um relatório com os bugs encontrados, evidências e passo a passo
 Foi adicionada uma rotina para realizar os testes diariamente ou após cada commit.
 
 É possível conferir esta rotina no [Github Actions](https://github.com/SaraKSPS/teste-qa-starbem/actions/)
+
+> Como 3 dos 28 testes estão falhando, é esperado que a rotina esteja com o resultado de falha.
